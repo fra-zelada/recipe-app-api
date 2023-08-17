@@ -34,6 +34,34 @@ or
 
 ``` docker-compose run --rm app sh -c "python manage.py wait_for_db && flake8" ```
 
-## crear una app en el proyecto 
+## crear una app en el proyecto
 
 ``` docker-compose run --rm app sh -c "python manage.py startapp core" ```
+
+## makemigrations
+
+``` docker-compose run --rm app sh -c "python manage.py makemigrations" ```
+
+## migrate
+
+``` docker-compose run --rm app sh -c "python manage.py wait_for_db && python manage.py migrate" ```
+
+## remove volume
+
+``` docker volume rm recipe-app-api_dev-db-data ```
+
+## create super user
+
+``` docker-compose run --rm app sh -c "python manage.py createsuperuser" ```
+
+## create venv
+
+``` python -m virtualenv -p C:\Users\Panch\AppData\Local\Programs\Python\Python39\python.exe venv ```
+
+## activar venv
+
+``` .\venv\Scripts\activate ```
+
+## install requirements
+
+``` pip install -r requirements.txt -r requirements.dev.txt ```
